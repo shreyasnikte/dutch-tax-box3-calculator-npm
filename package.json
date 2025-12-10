@@ -1,6 +1,6 @@
 {
   "name": "dutch-tax-box3-calculator",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "A calculator library for Dutch income tax Box 3 calculations",
   "type": "module",
   "main": "./dist/index.js",
