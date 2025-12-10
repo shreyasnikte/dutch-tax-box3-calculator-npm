@@ -156,6 +156,14 @@ Calculates Dutch Box 3 tax based on user inputs and configuration defaults.
 
 We welcome contributions! Please see [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines.
 
+## Maintainer Release Checklist
+
+1. Ensure code quality checks pass: `npm run lint`, `npm run test`, and `npm run type-check`.
+2. Build fresh artifacts: `npm run build` (clears `dist` first).
+3. Inspect the publish payload: `npm pack` (tarball should contain only `dist`, `README.md`, and `LICENSE`).
+4. Publish to npm (maintainers only): `npm publish --access public`.
+5. Tag the release in git after publish.
+
 ## License
 
 MIT - See [LICENSE](./LICENSE) for details.

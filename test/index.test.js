@@ -1,4 +1,4 @@
-import { test } from 'node:test';
+import test from 'node:test';
 import assert from 'node:assert';
 import {
   calculateBox3Tax,
@@ -84,7 +84,6 @@ test('calculateBox3Tax with tax partner doubles thresholds', () => {
     }
   );
 
-  // With tax partner: 100000 - (57000 * 2) = -14000 -> 0
   assert.equal(result.taxableBase, 0);
 });
 
@@ -110,8 +109,6 @@ test('calculateBox3Tax with debts reduces taxable base', () => {
     }
   );
 
-  // Capital yield base: 100000 - (50000 - 3700) = 53700
-  // Taxable base: 53700 - 57000 = 0
   assert.equal(result.taxableBase, 0);
 });
 
@@ -175,4 +172,3 @@ test('calculateBox3Tax with 2024 defaults', () => {
   assert.ok(result.estimatedTax > 0);
   assert.equal(result.breakdown.length, 6);
 });
-

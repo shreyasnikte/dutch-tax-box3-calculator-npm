@@ -52,6 +52,15 @@ We use [Changesets](https://github.com/changesets/changesets) to manage versioni
 4. Request review from maintainers
 5. Address review feedback
 
+## Releasing (Maintainers)
+
+1. Ensure the latest Changeset has been merged and version bumps are ready.
+2. Run `npm run lint`, `npm run test`, and `npm run type-check`.
+3. Run `npm run build` to regenerate `dist`.
+4. Verify the package contents locally with `npm pack` (only `dist`, `README.md`, and `LICENSE` should be included).
+5. Publish from the main branch: `npm publish --access public`.
+6. Tag the release in git after publishing.
+
 ## Code Style
 
 - Use 2-space indentation
