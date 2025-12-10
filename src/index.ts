@@ -85,7 +85,7 @@ export interface Box3Result {
  *       debtsThresholdPerIndividual: 3700
  *     },
  *     taxRate: 0.36,
- *     assumedReturnRates: {
+ *     assumedSReturnRates: {
  *       bankBalance: 0.0092,
  *       investmentAssets: 0.0592,
  *       debts: 0.0292
@@ -102,7 +102,7 @@ export function calculateBox3Tax(
   const { thresholds, taxRate, assumedReturnRates } = defaults ?? {};
   const { taxFreeAssetsPerIndividual = 0, debtsThresholdPerIndividual = 0 } = thresholds ?? {};
 
-  // Step 1: taxable returns calculation
+  // tep 1: taxable returns calculation
   const multiplier = hasTaxPartner ? 2 : 1;
   const totalTaxFreeAllowance = multiplier * taxFreeAssetsPerIndividual;
   const totalDebtsThreshold = multiplier * debtsThresholdPerIndividual;
@@ -135,27 +135,31 @@ export function calculateBox3Tax(
     estimatedTax: estimatedBox3Tax,
     breakdown: [
       {
-        description: 'Total returns',
+        description: 'Total bank + investment returns',
         amount: totalReturns,
       },
       {
-        description: 'Total costs',
+        description: 'Total Debt costs',
         amount: totalCosts,
       },
       {
-        description: 'Taxable returns',
+        description: 'Step 1: taxable returns (total returns - total costs)',
         amount: taxableReturns,
       },
       {
-        description: 'Capital yield tax base',
+        description: 'Step 2: capital yield tax base',
         amount: capitalYieldTaxBase,
       },
       {
-        description: 'Basis for savings & investments',
+        description: 'Step 3: basis for savings & investments',
         amount: basisForSavingsAndInvestments,
       },
+            {
+        description: 'Step 4: share in capital yield tax base',
+        amount: shareInCapitalYieldTaxBase,
+      },
       {
-        description: 'Income from savings and investments',
+        description: 'Step 5: income from savings and investments',
         amount: incomeFromSavingsAndInvestments,
       },
     ],
