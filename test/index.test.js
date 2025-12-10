@@ -33,6 +33,11 @@ test('calculateBox3Tax with basic input', () => {
 
   assert.ok(result.taxableBase >= 0);
   assert.ok(result.estimatedTax >= 0);
+  assert.ok(result.totalReturns >= 0);
+  assert.ok(result.totalCosts >= 0);
+  assert.ok(result.taxableReturns >= 0);
+  assert.equal(result.totalTaxFreeAllowance, 57000);
+  assert.equal(result.totalDebtsThreshold, 3700);
   assert.equal(result.breakdown.length, 7);
 });
 
@@ -85,6 +90,8 @@ test('calculateBox3Tax with tax partner doubles thresholds', () => {
   );
 
   assert.equal(result.taxableBase, 0);
+  assert.equal(result.totalTaxFreeAllowance, 114000); // 57000 * 2
+  assert.equal(result.totalDebtsThreshold, 7400); // 3700 * 2
 });
 
 test('calculateBox3Tax with debts reduces taxable base', () => {
@@ -117,6 +124,11 @@ test('calculateBox3Tax handles default values', () => {
 
   assert.equal(result.taxableBase, 0);
   assert.equal(result.estimatedTax, 0);
+  assert.equal(result.totalReturns, 0);
+  assert.equal(result.totalCosts, 0);
+  assert.equal(result.taxableReturns, 0);
+  assert.equal(result.totalTaxFreeAllowance, 0);
+  assert.equal(result.totalDebtsThreshold, 0);
   assert.ok(Array.isArray(result.breakdown));
 });
 

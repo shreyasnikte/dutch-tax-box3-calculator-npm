@@ -59,6 +59,16 @@ export interface Box3Result {
   taxableBase: number;
   /** Estimated Box 3 tax amount */
   estimatedTax: number;
+  /** Total returns from bank balance and investment assets */
+  totalReturns: number;
+  /** Total costs from debts after deductible */
+  totalCosts: number;
+  /** Taxable returns (total returns minus total costs) */
+  taxableReturns: number;
+  /** Total tax-free allowance (doubled if tax partner) */
+  totalTaxFreeAllowance: number;
+  /** Total debts threshold (doubled if tax partner) */
+  totalDebtsThreshold: number;
   /** Detailed breakdown of calculation steps */
   breakdown: BreakdownItem[];
 }
@@ -133,6 +143,11 @@ export function calculateBox3Tax(
   return {
     taxableBase: basisForSavingsAndInvestments,
     estimatedTax: estimatedBox3Tax,
+    totalReturns,
+    totalCosts,
+    taxableReturns,
+    totalTaxFreeAllowance,
+    totalDebtsThreshold,
     breakdown: [
       {
         description: 'Total bank + investment returns',
