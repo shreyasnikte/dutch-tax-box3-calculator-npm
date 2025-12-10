@@ -33,7 +33,7 @@ test('calculateBox3Tax with basic input', () => {
 
   assert.ok(result.taxableBase >= 0);
   assert.ok(result.estimatedTax >= 0);
-  assert.equal(result.breakdown.length, 6);
+  assert.equal(result.breakdown.length, 7);
 });
 
 test('calculateBox3Tax with assets below threshold', () => {
@@ -170,5 +170,5 @@ test('calculateBox3Tax with 2024 defaults', () => {
 
   assert.ok(result.taxableBase > 0);
   assert.ok(result.estimatedTax > 0);
-  assert.equal(result.breakdown.length, 6);
+  assert.equal(result.breakdown.length, 7);
 });

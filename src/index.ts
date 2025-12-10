@@ -154,7 +154,7 @@ export function calculateBox3Tax(
         description: 'Step 3: basis for savings & investments',
         amount: basisForSavingsAndInvestments,
       },
-            {
+      {
         description: 'Step 4: share in capital yield tax base',
         amount: shareInCapitalYieldTaxBase,
       },
