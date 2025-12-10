@@ -1,0 +1,49 @@
+{
+  "name": "dutch-tax-box3-calculator",
+  "version": "0.1.0",
+  "description": "A calculator library for Dutch income tax Box 3 calculations",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "node build.js",
+    "test": "node --test",
+    "example": "node example.js",
+    "lint": "eslint src/",
+    "format": "prettier --write .",
+    "type-check": "tsc --noEmit",
+    "prepublishOnly": "npm run build && npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shreyasnikte/Dutch_Tax.git",
+    "directory": "dutch-tax-box3-calculator-npm"
+  },
+  "keywords": [
+    "dutch-tax",
+    "box3",
+    "calculator",
+    "netherlands"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.0.0",
+    "prettier": "^3.0.0",
+    "typescript": "^5.0.0"
+  }
+}
