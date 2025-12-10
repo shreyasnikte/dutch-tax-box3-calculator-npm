@@ -143,23 +143,23 @@ export function calculateBox3Tax(
         amount: totalCosts,
       },
       {
-        description: 'Step 1: taxable returns (total returns - total costs)',
+        description: 'Step 1: Total assets = bank savings + investments = ',
         amount: taxableReturns,
       },
       {
-        description: 'Step 2: capital yield tax base',
+        description: 'Step 2: Capital yield tax base = total assets - deductible debts = ',
         amount: capitalYieldTaxBase,
       },
       {
-        description: 'Step 3: basis for savings & investments',
+        description: 'Step 3: Basis for savings & investments = capital yield tax base - allowance = ',
         amount: basisForSavingsAndInvestments,
       },
       {
-        description: 'Step 4: share in capital yield tax base',
+        description: 'Step 4: Share in capital yield tax base = basis / capital yield tax base = ',
         amount: shareInCapitalYieldTaxBase,
       },
       {
-        description: 'Step 5: income from savings and investments',
+        description: 'Step 5: Income from savings & investments = taxable returns x share = ',
         amount: incomeFromSavingsAndInvestments,
       },
     ],
