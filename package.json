@@ -18,7 +18,7 @@
   ],
   "scripts": {
     "build": "node build.js",
-    "test": "npm run build && node --test test/**/*.test.js",
+    "test": "npm run build && node --test",
     "example": "node example.js",
     "lint": "eslint . --ext .ts,.js",
     "format": "prettier --write .",
