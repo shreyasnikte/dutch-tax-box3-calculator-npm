@@ -27,8 +27,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/shreyasnikte/Dutch_Tax.git",
-    "directory": "dutch-tax-box3-calculator-npm"
+    "url": "https://github.com/shreyasnikte/dutch-tax-box3-calculator-npm.git"
   },
   "keywords": [
     "dutch-tax",
@@ -36,7 +35,7 @@
     "calculator",
     "netherlands"
   ],
-  "author": "Dutch Tax Contributors <shreyasnikte@gmail.com>",
+  "author": "Shreyas Nikte <shreyas.nikte@gmail.com>",
   "license": "MIT",
   "engines": {
     "node": ">=18.0.0"
