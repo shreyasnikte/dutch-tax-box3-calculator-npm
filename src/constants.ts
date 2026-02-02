@@ -44,6 +44,18 @@ export const BOX3_DEFAULTS_BY_YEAR: Record<number, Box3Defaults> = {
       debts: 2.62 / 100,
     },
   },
+  2026: {
+    thresholds: {
+      taxFreeAssetsPerIndividual: 57684,
+      debtsThresholdPerIndividual: 3800,
+    },
+    taxRate: 36 / 100,
+    assumedReturnRates: {
+      bankBalance: 1.28 / 100,
+      investmentAssets: 6.00 / 100,
+      debts: 2.70 / 100,
+    },
+  },
 };
 
 /**
@@ -56,7 +68,7 @@ export const AVAILABLE_YEARS = Object.keys(BOX3_DEFAULTS_BY_YEAR)
 /**
  * Default year for calculations
  */
-export const DEFAULT_YEAR = 2025;
+export const DEFAULT_YEAR = 2026;
 
 /**
  * Get Box 3 defaults for a specific year
