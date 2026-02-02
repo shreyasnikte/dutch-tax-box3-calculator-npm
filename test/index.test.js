@@ -143,18 +143,20 @@ test('BOX3_DEFAULTS_BY_YEAR contains all years', () => {
   assert.ok(BOX3_DEFAULTS_BY_YEAR[2023]);
   assert.ok(BOX3_DEFAULTS_BY_YEAR[2024]);
   assert.ok(BOX3_DEFAULTS_BY_YEAR[2025]);
+  assert.ok(BOX3_DEFAULTS_BY_YEAR[2026]);
 });
 
 test('AVAILABLE_YEARS is sorted in descending order', () => {
   assert.ok(Array.isArray(AVAILABLE_YEARS));
-  assert.ok(AVAILABLE_YEARS.length >= 3);
-  assert.equal(AVAILABLE_YEARS[0], 2025);
-  assert.equal(AVAILABLE_YEARS[1], 2024);
-  assert.equal(AVAILABLE_YEARS[2], 2023);
+  assert.ok(AVAILABLE_YEARS.length >= 4);
+  assert.equal(AVAILABLE_YEARS[0], 2026);
+  assert.equal(AVAILABLE_YEARS[1], 2025);
+  assert.equal(AVAILABLE_YEARS[2], 2024);
+  assert.equal(AVAILABLE_YEARS[3], 2023);
 });
 
-test('DEFAULT_YEAR is 2025', () => {
-  assert.equal(DEFAULT_YEAR, 2025);
+test('DEFAULT_YEAR is 2026', () => {
+  assert.equal(DEFAULT_YEAR, 2026);
 });
 
 test('getDefaultsForYear returns correct defaults', () => {
